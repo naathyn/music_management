@@ -2,9 +2,10 @@
   <% provide(:title, @title) %>
 <% end %>
 
+<% content_for :image do %>
+  <%= image_tag "hill.png", class: "page-fade" %>
+<% end %>
+
 <div class="row-fluid">
-  <div class="center">
-    <%= image_tag "hill.png", style: "margin-left:-150px;opacity: 0.3;max-height:215px;position: fixed;margin-top:250px;" %>
-  </div>
   <ul> <%= render @blog %> </ul>
 </div>

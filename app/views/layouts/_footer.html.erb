@@ -3,7 +3,7 @@
     <li>&copy; <%= link_to "Sam Raines", :home %></li>
   </ul>
 
-  <% unless action_name == "index" %>
+  <% unless controller_name == "articles" %>
     <ul class="pull-right share-actions">
       <% if signed_in? %>
         <li><%= link_to "Account", edit_user_path(current_user) %> - </li>

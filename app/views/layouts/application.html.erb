@@ -19,12 +19,8 @@
   </head>
   <body>
     <%= render 'shared/modal' %>
-      <div class="page-image">
-        <%= yield(:image) %>
-      </div>
-    <section id="navigation">
-      <%= render 'layouts/masthead' %>
-    </section> <!-- navigation -->
+
+    <%= render 'layouts/masthead' %>
     <section id="main" class="page-wrapper" role="main">
       <div class="page-fade">
         <%= render 'layouts/messages' %>
@@ -36,5 +32,8 @@
         <%= render 'layouts/footer' %>
       </div>
     </footer>
+    <div class="page-image">
+      <%= yield(:image) %>
+    </div>
   </body>
 </html>

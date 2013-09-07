@@ -22,8 +22,8 @@
 //= require bootstrap-tooltip
 //= require bootstrap-button
 //= require bootstrap-collapse
-//= require initializers
 //= require bootstrap-wysihtml5
+//= require initializers
 //= require hoverfold
-//= require shadowbox
 //= require player
+//= require shadowbox
