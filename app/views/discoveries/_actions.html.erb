@@ -1,0 +1,18 @@
+<ul class="share-actions" style="opacity:16px;opacity:1;margin-bottom:1em;">
+  <li>
+    <a href="<%= new_discovery_path %>" title="New Discovered Artist">
+      <i class="icon-file icon-2x"></i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= edit_discovery_path(discovery) %>" title="Edit <%= discovery.title %>">
+      <i class="icon-pencil icon-2x"></i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= discovery_path(discovery) %>" data-method="delete"
+        data-confirm="Are you sure?" title="Delete <%= discovery.title %>">
+      <i class="icon-trash icon-2x"></i>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+<ul class="share-actions pull-right">
+  <li>
+    <a href="<%= new_blog_path %>" title="New Blog">
+      <i class="icon-file"></i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= edit_blog_path(blog) %>" title="Edit <%= blog.title %>">
+      <i class="icon-pencil"></i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= blog_path(blog) %>" data-method="delete"
+        data-confirm="Are you sure?" title="Delete <%= blog.title %>">
+      <i class="icon-trash "></i>
+    </a>
+  </li>
+</ul>

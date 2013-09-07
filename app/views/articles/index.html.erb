@@ -1,0 +1,13 @@
+ <% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<div class="row-fluid">
+  <div class="span5">
+    <div id="article_form"></div>
+    <ul>
+      <%= render @articles %>
+    </ul>
+  </div>
+    <%= image_tag "city.png", style: "opacity: 0.7;margin-top:0;margin-left:255px;height: 600px;position:fixed;" %>
+</div>

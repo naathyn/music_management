@@ -1,0 +1,12 @@
+<li id="<%= show.id %>" class="bordered">
+  <h1> <%= show.venue %>
+    <span class="label label-success"> <%= show.price_for_show %> </span>
+  </h1>
+  <h2> <%= show.date_for_show %> </h2>
+  <p> <%= auto_link show.address %> </p>
+  <% if signed_in? %>
+    <div class="row">
+      <%= render partial: 'shows/actions', object: show, as: :show %>
+    </div>
+  <% end %>
+</li>

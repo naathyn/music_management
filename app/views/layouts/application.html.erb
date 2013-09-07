@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= full_title yield(:title) %></title>
+    <meta name="description" content="Future Home For Sam Raines Music">
+    <meta name="author" content="Artist: Samuel G Raines, Designer: Nathan C Couch">
+    <%= auto_discovery_link_tag(:atom,
+        { controller: "articles", action: "index" },
+        { title: "Sam Raines Official Music Updates" } ) %>
+    <%= stylesheet_link_tag "application", media: "all",
+                            "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application",
+                            "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <%= render 'shared/modal' %>
+      <div class="page-image">
+        <%= yield(:image) %>
+      </div>
+    <section id="navigation">
+      <%= render 'layouts/masthead' %>
+    </section> <!-- navigation -->
+    <section id="main" class="page-wrapper" role="main">
+      <div class="page-fade">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    </section> <!-- page-wrapper -->
+    <footer>
+      <div class="container">
+        <%= render 'layouts/footer' %>
+      </div>
+    </footer>
+  </body>
+</html>

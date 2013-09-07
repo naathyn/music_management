@@ -1,0 +1,141 @@
+$innerBody: rgb(251, 251, 251);
+$navCollapse: rgb(248, 248, 248);
+$outterBody: rgb(247, 247, 247);
+$wellGray: rgb(245, 245, 245);
+$moduleGray: rgb(243, 243, 243);
+$mainGray: rgb(238, 238, 238);
+$userBorder: rgb(235, 235, 235);
+$border: rgb(230, 230, 230);
+$moduleBorder: rgb(227, 227, 227);
+$borderDarker: rgb(218, 218, 218);
+$inputBorder: rgb(202, 202, 202);
+$quotesBorder: rgb(198, 198, 198);
+$timestamp: rgb(170, 187, 170);
+$textGrayLighter: rgb(170, 170, 170);
+$statsGray: rgb(153, 153, 153);
+$grayLarge: rgb(118, 118, 118);
+$navGray: rgb(100, 100, 100);
+$navGrayActive: rgb(80, 80, 80);
+$textGrayLight: rgb(69, 69, 69);
+$textGray: rgb(51, 51, 51);
+$softGreen: rgb(68, 125, 58);
+$softerGreen: rgb(78, 143, 66);
+$smoothGreen: rgb(110, 138, 105);
+$darkGreen: rgb(51, 82, 58);
+
+@mixin perspective($px) {
+  -webkit-perspective: $px;
+  -moz-perspective: $px;
+  -o-perspective: $px;
+  -ms-perspective: $px;
+  perspective: $px;
+}
+
+@mixin transform-style($style) {
+  -webkit-transform-style: $style;
+  -moz-transform-style: $style;
+  -o-transform-style: $style;
+  -ms-transform-style: $style;
+  transform-style: $style;
+}
+
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin rotate3d($deg) {
+  -webkit-transform: rotate3d(0,1,0,#{$deg});
+  -moz-transform: rotate3d(0,1,0,#{$deg});
+  -o-transform: rotate3d(0,1,0,#{$deg});
+  -ms-transform: rotate3d(0,1,0,#{$deg});
+  transform: rotate3d(0,1,0,#{$deg});
+}
+
+@mixin transform3d($one, $two) {
+  -webkit-transform: translate3d(#{$one},0,0) rotate3d(0,1,0,#{$two});
+  -moz-transform: translate3d(#{$one},0,0) rotate3d(0,1,0,#{$two});
+  -o-transform: translate3d(#{$one},0,0) rotate3d(0,1,0,#{$two});
+  -ms-transform: translate3d(#{$one},0,0) rotate3d(0,1,0,#{$two});
+  transform: translate3d(#{$one},0,0) rotate3d(0,1,0,#{$two});
+}
+
+@mixin drop-shadow($shadow) {
+  -webkit-filter: drop-shadow($shadow);
+  -moz-filter: drop-shadow($shadow);
+  -ms-filter: drop-shadow($shadow);
+  -o-filter: drop-shadow($shadow);
+  filter: drop-shadow($shadow);
+}
+
+@mixin transitions {
+  @include transition(opacity 0.8s ease-in-out);
+}
+
+@mixin link_hover {
+  @include transition(all 0.3s ease-in-out);
+}
+
+@mixin hovers {
+  @include box-shadow(inset 0px 4px 8px rgba(0, 0, 0, 0.05));
+}
+
+@mixin forms {
+  @include box-sizing(border-box);
+  @include border-radius(0px 0px 4px 4px);
+  @include box-shadow(inset 0px 4px 8px rgba(0, 0, 0, 0.05));
+}
+
+@mixin rounded_nav {
+  @include border-radius(15px);
+}
+
+@mixin circles {
+  @include border-radius(10px);
+}
+
+@mixin modules {
+  @include border-radius(5px);
+}
+
+@mixin holdsters {
+  @include box-sizing(border-box);
+  @include box-shadow(0px 0px 6px rgba(0, 0, 0, 0.1));
+}
+
+@mixin well-header {
+  @include border-radius(5px 5px 0px 0px);
+}
+
+@mixin well-bottom {
+  @include border-radius(0px 0px 5px 5px);
+}
+
+@mixin modal-header {
+  @include border-radius(6px 6px 0px 0px);
+}
+
+@mixin modal {
+  @include modules;
+  @include box-shadow(0px 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+@mixin tables-shadow {
+  @include box-shadow(0px 1px 6px rgba(0, 0, 0, 0.1));
+}
+
+@mixin tables {
+  @include gradient-vertical($startColor: $outterBody, $endColor: $white);
+}
+
+@mixin table_header {
+  @include gradient-vertical($startColor: $white, $endColor: $mainGray);
+}
+
+@mixin grads {
+  @include gradient-vertical-three-colors($startColor: #fbfbfb, $midColor: #eaeaea, $colorStop: 50%, $endColor: #f8f8f8);
+  @include box-shadow(inset 0px 1px 0px $white);
+}

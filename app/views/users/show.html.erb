@@ -1,0 +1,21 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<ul class="nav nav-pills">
+  <% @albums.each do |album| %>
+    <% if album == Album.first %> <li class="active"> <% else %>
+    <li> <% end %>
+      <a href="#<%= album.id %>"> <%= album.name %> </a>
+    </li>
+  <% end %>
+</ul>
+
+<div class="tab-content" style="overflow: hidden;">
+  <% @albums.each do |album| %>
+    <% if album == Album.first %> <div class="tab-pane active" id="<%= album.id %>"> <% else %>
+    <div class="tab-pane" id="<%= album.id %>"> <% end %>
+      <%= render album.photos %>
+    </div>
+  <% end %>
+</div>

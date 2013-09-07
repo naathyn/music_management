@@ -1,0 +1,13 @@
+ <% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<% content_for :image do %>
+ <%= image_tag "church.png" %>
+<% end %>
+
+<div class="row-fluid">
+  <div class="span6">
+    <ul class="<%= controller_name %>"> <%= render @shows %> </ul>
+  </div>
+</div>

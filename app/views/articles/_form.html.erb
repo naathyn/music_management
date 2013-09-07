@@ -1,0 +1,9 @@
+<%= form_for(@article, remote: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.text_area :content, placeholder: "The news article's content goes here", rows: 2 %>
+  <% if action_name == "edit" %>
+    <%= f.submit "Update It", class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit "Post It", class: "btn btn-success" %>
+  <% end %>
+<% end %>

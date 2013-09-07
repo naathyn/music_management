@@ -1,0 +1,23 @@
+<%= form_for @show do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :date %>
+    <%= select_datetime DateTime.now %>
+
+    <%= f.label :venue %>
+    <%= f.text_field :venue, placeholder: "Your show's venue" %>
+
+    <%= f.label :address %>
+    <%= f.text_area :address, class: "wysihtml5", rows: 8,
+        placeholder: "Your show's location" %>
+
+    <%= f.label :price %>
+    <%= f.text_field :price, placeholder: "Leave blank if your show is free" %>
+
+  <% if action_name == "edit" %>
+    <%= f.submit "Update It", class: "btn btn-success" %>
+  <% else %>
+    <%= f.submit "Post It", class: "btn btn-success" %>
+  <% end %>
+
+<% end %>

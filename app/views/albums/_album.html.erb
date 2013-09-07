@@ -1,0 +1,10 @@
+<div class="row-fluid">
+  <h2> <%= album.name %> </h2>
+  <p class="small">
+    with <%= pluralize(album.photos.count, 'photo') %>
+  </p>
+  <%= render partial: "actions", object: album, as: :album if signed_in? %>
+</div>
+<div class="row-fluid">
+  <%= render album.photos unless album.photos.empty? %>
+</div>

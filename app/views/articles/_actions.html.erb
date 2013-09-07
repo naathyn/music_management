@@ -1,0 +1,21 @@
+<ul class="share-actions pull-right">
+  <li>
+    <a href="<%= new_article_path %>"
+        data-remote="true" title="New Article">
+      <i class="icon-file"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= edit_article_path(article) %>"
+        data-remote="true" title="Edit <%= article.content %>">
+      <i class="icon-pencil"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= article_path(article) %>" data-method="delete"
+        data-remote="true" data-confirm="Are you sure?"
+        title="Delete <%= article.content %>">
+      <i class="icon-trash"> </i>
+    </a>
+  </li>
+</ul>

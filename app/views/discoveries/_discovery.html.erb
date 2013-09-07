@@ -1,0 +1,24 @@
+<li id="<%= discovery.id %>">
+
+  <div class="row-fluid">
+    <h1 class="title"><%= discovery.title %></h1>
+    <h2> Discovering <%= discovery.person %> </h2>
+  </div>
+
+  <% if signed_in? %>
+    <div class="row-fluid center">
+      <%= render partial: 'actions', object: discovery, as: :discovery %>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="view-wrapper">
+      <%= image_tag discovery.thumbnail %>
+    </div>
+    <div class="format">
+      <%= auto_link(discovery.content, html: { target: '_blank' }) do |content|
+            truncate(content, length: 30) end %>
+    </div>
+  </div>
+
+</li>

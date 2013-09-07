@@ -1,0 +1,32 @@
+<div class="btn-group">
+  <a class="btn btn-success"
+      rel="shadowbox[<%= album.name %>]"
+      href="<%= album.random_photo.thumbnail %>"
+      title="<%= album.random_photo.title %> | <%= album.random_photo.description %>">
+    <i class="icon-zoom-in"></i> <%= album.name %> </a>
+  <a class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+    <span class="icon-caret-down"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="<%= new_album_path %>" title="New Album">
+        <i class="icon-file"></i> Add Photos
+      </a>
+    </li>
+    <li>
+      <a href="<%= edit_album_path(album) %>" title="Edit <%= album.name %>">
+        <i class="icon-pencil" style="margin:0;"></i> Edit Album
+      </a>
+    </li>
+    <li>
+      <a href="<%= album_path(album) %>" data-method="delete"
+          data-confirm="Are you sure?" title="Delete <%= album.name %>">
+        <i class="icon-trash "></i> Delete Album
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="<%= new_album_path %>"><i class="i"></i> New Album </a>
+    </li>
+  </ul>
+</div>

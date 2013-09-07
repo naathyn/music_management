@@ -1,0 +1,18 @@
+<div class="row-fluid">
+  <ul class="pull-left">
+    <li>&copy; <%= link_to "Sam Raines", :home %></li>
+  </ul>
+
+  <% unless action_name == "index" %>
+    <ul class="pull-right share-actions">
+      <% if signed_in? %>
+        <li><%= link_to "Account", edit_user_path(current_user) %> - </li>
+        <li> -
+          <%= link_to "Signout", :signout,  method: "delete" %>
+        </li>
+      <% else %>
+        <li><%= link_to "Admin Signin", :signin %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

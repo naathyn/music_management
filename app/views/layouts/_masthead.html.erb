@@ -1,0 +1,36 @@
+<header class="masthead">
+  <div class="row-fluid">
+    <div class="container" id="top">
+
+      <div id="top-left">
+        <%= link_to "Sam Raines", :home, id: "logo" %>
+        <a id="biolink" href="<%= bio_path %>"
+            data-remote="true" data-toggle="modal"
+            data-target="#modal-window"> Biography
+        </a>
+      </div> <!-- top-left -->
+
+      <%= render 'layouts/icons' %>
+
+    </div> <!-- top -->
+  </div> <!-- row-fluid -->
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar"
+                data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <div class="nav-collapse collapse">
+          <%= render 'layouts/navigation' %>
+        </div> <!-- nav-collapse -->
+
+      </div> <!-- container -->
+    </div> <!-- navbar-inner -->
+  </nav> <!-- navbar -->
+
+</header> <!-- masthead -->

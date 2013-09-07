@@ -1,0 +1,8 @@
+<aside class="span3">
+<h2> Tags </h2>
+  <% Tag.all.each do |tag| %>
+    <ol>
+      <li> <i class="icon-tags"></i> <%= link_to tag.name, tag_path(tag) %> </li>
+    </ol>
+  <% end %>
+</aside>

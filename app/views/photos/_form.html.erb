@@ -1,0 +1,19 @@
+<%= form_for @photo do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 2 %>
+
+    <%= f.label :thumbnail %>
+    <%= f.text_field :thumbnail, placeholder: "A url to link your image (gif, jpg, or png)" %>
+
+    <%= f.label :album_id %>
+    <%= f.select :album_id, Album.all.map { |album|
+        [album.name, album.id]
+    }, prompt: "Select a Photo Album" %>
+
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>

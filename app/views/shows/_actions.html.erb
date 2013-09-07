@@ -1,0 +1,19 @@
+<ul class="share-actions pull-right">
+  <li>
+    <a href="<%= new_show_path %>" title="New Show">
+      <i class="icon-file"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= edit_show_path(show) %>" title="Edit <%= show.venue %>">
+      <i class="icon-pencil"> </i>
+    </a>
+  </li>
+  <li>
+    <a href="<%= show_path(show) %>" data-method="delete"
+        data-confirm="Are you sure?"
+        title="Delete <%= show.venue %>">
+      <i class="icon-trash"> </i>
+    </a>
+  </li>
+</ul>

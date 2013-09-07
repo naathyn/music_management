@@ -1,0 +1,32 @@
+<% provide(:title, @title) %>
+
+<% unless device_is_mobile? %>
+<% content_for(:head) do %>
+  <script>$(function(){$('#fold').hoverfold();});</script>
+  <% end %>
+<% end %>
+
+<div class="grid">
+  <div class="container">
+    <div class="row-fluid" id="fold">
+
+      <% @discoveries.each do |discovery| %>
+
+        <div class="view">
+          <%= image_tag discovery.thumbnail %>
+          <div class="view-back" style="<%= image_for discovery %>">
+
+            <span class="view-title"><%= discovery.title %></span>
+            <span class="view-person"><%= discovery.person %></span>
+            <span class="view-content">
+              <%= truncate auto_link(discovery.content), length: 200 %>
+            </span>
+            <a href="<%= discovery_path(discovery) %>">
+              <i class="icon-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

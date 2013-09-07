@@ -1,0 +1,22 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<div class="row-fluid">
+  <div class="span7 offset2">
+    <h1 class="center"><%= @title %></h1>
+    <%= render 'form' %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span7 offset2">
+    <h1 class="center">Photo Album Management</h1>
+    <%= render 'albums/form' %>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span7 offset2">
+    <h1 class="center">Photo Management</h1>
+    <%= render 'photos/form' %>
+  </div>
+</div>

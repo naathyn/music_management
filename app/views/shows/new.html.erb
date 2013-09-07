@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<h1 class="center"><%= @title %></h1>
+
+<div class="row-fluid">
+  <%= render 'form' %>
+</div>

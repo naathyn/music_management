@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<h1><%= @title %></h1>
+
+<div class="row-fluid">
+  <div class="span5 offset3">
+    <%= form_for(:session, url: :sessions) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Sign in", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

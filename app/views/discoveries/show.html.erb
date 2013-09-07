@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<div class="row-fluid">
+  <ul class="discoveries">
+    <%= render @discovery %>
+  </ul>
+</div>

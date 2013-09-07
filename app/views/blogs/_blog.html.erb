@@ -1,0 +1,42 @@
+<li id="<%= blog.id %>">
+
+  <div class="row-fluid">
+    <div class="title">
+      <%= link_to blog.title, entry_path(blog) %>
+      <p class="tag-row pull-right"> <%= blog.timestamp %> </p>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class="format">
+      <% if action_name == "index" %>
+        <%= auto_link truncate blog.content, length: 420, escape: false %>
+        <%= link_to "read on", entry_path(blog) %>
+      <% else %>
+      <%= auto_link(blog.content, html: { target: '_blank' }) do |content|
+            truncate(content, length: 30) end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if signed_in? %>
+    <div class="row-fluid">
+      <%= render partial: 'blogs/actions', object: blog, as: :blog %>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="tag-row">
+      <% if blog.tags.any? && action_name != "index" %>
+        <ol class="share-actions">
+          <% blog.tags.each do |tag| %>
+            <li>
+              <i class="icon-tag"></i> <%= link_to "#{tag.name} (#{tag.blogs.published.count})", tag %>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+    </div>
+  </div>
+
+</li>

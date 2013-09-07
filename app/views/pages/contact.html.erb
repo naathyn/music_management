@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="span8 offset2">
+    <%= form_for @message do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :department, "To: ", style: "display: inline;" %>
+      <%= select_tag :department, options_for_select(Message::DEPARTMENTS),
+            prompt: "Select Recipient", style: "margin-left:15px;" %>
+    <br>
+      <%= f.label :subject, "Subject: " %>
+      <%= f.text_field :subject, placeholder: "Sam Raines Music" %>
+    <br>
+      <%= f.label :email, "From: " %>
+      <%= f.email_field :email, placeholder: "your@email.com" %>
+    <br>
+      <%= f.label :name, "Name (optional)" %>
+      <%= f.text_field :name %>
+    <br>
+      <%= f.text_area :body, class: "wysihtml5", rows: 8,
+          placeholder: "Type your message" %>
+    <br>
+      <%= f.submit "Send", class: "btn" %>
+    <% end %>
+  </div>
+</div>

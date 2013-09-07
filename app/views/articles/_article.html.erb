@@ -1,0 +1,10 @@
+<li id="<%= article.id %>" class="bordered index_item">
+  <h1> <%= article.month %> </h1>
+  <h2> <%= article.without_month %> </h2>
+  <p> <%= auto_link article.content %> </p>
+  <% if signed_in? %>
+    <div class="row">
+      <%= render partial: 'articles/actions', object: article, as: :article %>
+    </div>
+  <% end %>
+</li>

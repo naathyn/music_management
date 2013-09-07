@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<% content_for :image do %>
+  <%= image_tag "hill.png"%>
+<% end %>
+
+<div class="row-fluid">
+  <ul> <%= render @blogs %> </ul>
+</div>

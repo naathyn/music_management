@@ -1,0 +1,17 @@
+<%= form_for @discovery do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "Title of your entry" %>
+
+    <%= f.label :person %>
+    <%= f.text_field :person, placeholder: "Who did you discover?" %>
+
+    <%= f.label :thumbnail %>
+    <%= f.text_field :thumbnail, placeholder: "The link of an image" %>
+
+    <%= f.text_area :content, class: "wysihtml5", rows: 8,
+          placeholder: "Your content goes here" %>
+
+  <%= f.submit "Discover!", class: "btn btn-large btn-success" %>
+<% end %>

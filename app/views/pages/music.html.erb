@@ -1,0 +1,27 @@
+ <% content_for :head do %>
+  <% provide(:title, @title) %>
+<% end %>
+
+<div class="music-page container-fluid">
+  <div class="row-fluid">
+    <div class="span4 offset1" style="margin-top:1em;font-size:16px;">
+
+    <%= image_tag "song_list.png", style: "max-height: 425px" %>
+
+    <hr>
+
+      <p>  </p>
+
+    </div>
+
+    <div class="span5 offset1">
+      <div style="padding:5px;">
+      <%= image_tag("cover.png", "class" => "reviews r_music",
+          "data-original-title" => "“Press comment” ― Source")
+      %>
+    </div>
+
+    </div>
+
+  </div>
+</div>
