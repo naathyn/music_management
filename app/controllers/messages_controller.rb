@@ -25,10 +25,11 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message.department = params[:department]
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to 'pages/home', notice: "Thanks for the message! You will hear back from #{@message.department} as soon as it's seen!"}
+        format.html { redirect_to :home, notice: "Thanks for the message! You will hear back from #{@message.department} as soon as it's seen!"}
         format.json { render action: 'show', status: :created, location: @message }
       else
         format.html { render action: 'new' }
@@ -67,6 +68,6 @@ class MessagesController < ApplicationController
     end
 
     def message_params
-      params.require(:message).permit(department: [], :email, :name, :subject, :body)
+      params.require(:message).permit({:department => []}, :email, :name, :subject, :body)
     end
 end
