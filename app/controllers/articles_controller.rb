@@ -25,16 +25,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @articles = Article.page(params[:page])
-
-    respond_to do |format|
-      if @article.save
-        format.json { render action: 'show', status: :created, location: @article }
-        format.js
-      else
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-        format.js
-      end
-    end
+    respond_with @article if @article.save
   end
 
   def update
@@ -65,6 +56,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:content, :published)
+      params.require(:article).permit(:content)
     end
 end

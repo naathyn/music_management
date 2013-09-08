@@ -29,6 +29,8 @@ SamRainesMusic::Application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.assets.precompile += %w[*.otf *.eot *.ttf *.woff]
+
   # Generate digests for assets URLs.
   config.assets.digest = true
 
@@ -73,7 +75,7 @@ SamRainesMusic::Application.configure do
   config.active_support.deprecation = :notify
 
   # Disable automatic flushing of the log to improve performance.
-  # config.autoflush_log = false
+  config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
