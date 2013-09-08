@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require modernizr
 //= require turbolinks
+//= require modernizr
 //= require bootstrap-transition
 //= require bootstrap-alert
 //= require bootstrap-modal
@@ -24,6 +24,6 @@
 //= require bootstrap-collapse
 //= require bootstrap-wysihtml5
 //= require initializers
-//= require hoverfold
-//= require player
 //= require shadowbox
+//= require player
+//= require hoverfold

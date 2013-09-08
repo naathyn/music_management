@@ -9,9 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree ./fonts
- *= require font-awesome
  *= require custom
+ *= require discoveries
  *= require bootstrap-wysihtml5
  *= require shadowbox
  *= require_tree .

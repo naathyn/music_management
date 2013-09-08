@@ -264,7 +264,6 @@ footer .container li a {
 .page-wrapper {
   padding: 1em;
   padding-top: 0px;
-  min-height: 100%;
 }
 
 .center {
@@ -282,6 +281,16 @@ footer .container li a {
   top: 45%;
   left: 35%;
 }
+
+.main-image {
+  max-height: 550px;
+  opacity: 0.7;
+  @include transitions;
+  &:hover {
+    opacity: 1;
+  }
+}
+
 
 .church {
   top: 30%;
@@ -544,191 +553,6 @@ footer:hover .share-actions li,
 .field_with_errors {
   @extend .control-group;
   @extend .error;
-}
-
-// Discovery pages
-
-.grid {
-  overflow: hidden;
-  position: relative;
-  margin: 0px auto;
-}
-
-.view {
-  display: inline-block;
-  width: 316px;
-  height: 216px;
-  margin: 1em;
-  position: relative;
-  border: 8px solid white;
-  background: #333;
-  text-shadow: none;
-  @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.05));
-  @include perspective(800px);
-}
-
-.view .slice {
-  width: 60px;
-  height: 100%;
-  z-index: 100;
-  @include transform-style(preserve-3d);
-  @include transform-origin(left center);
-  @include transition(transform 150ms ease-in-out);
-}
-
-.view div.view-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  z-index: 0;
-  @include gradient-horizontal($startColor: #0a0a0a, $endColor: #666666);
-}
-
-.view-back span {
-  display: block;
-  float: right;
-  padding: 5px 20px 5px;
-  width: 100%;
-  text-align: right;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.view-back span.view-title {
-  padding-top: 20px;
-  font-size: 18px;
-  margin-bottom: -5px;
-}
-
-.view-back span.view-person {
-  font-size: 16px;
-  margin-bottom: -5px;
-}
-
-.view-back a {
-  display: block;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.4);
-  position: absolute;
-  right: 15px;
-  bottom: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  @include border-radius(50%);
-  width: 30px;
-  height: 30px;
-  line-height: 22px;
-  text-align: center;
-  font-weight: 700;
-  text-shadow: 0px -1px 1px rgba(0, 0, 0, .3);
-  &:hover {
-    color: white;
-    border-color: white;
-  }
-  i { margin-top: 2.5px; }
-}
-
-.view:hover .s1 {
-  @include transition-delay(200ms);
-  @include rotate3d(-3deg);
-}
-
-.view:hover .s2 {
-  @include transition-delay(150ms);
-  @include transform3d(59px, -10deg);
-}
-
-.view:hover .s3 {
-  @include transition-delay(100ms);
-  @include transform3d(59px, -16deg);
-}
-
-.view:hover .s4 {
-  @include transition-delay(50ms);
-  @include transform3d(59px, -30deg);
-}
-
-.view:hover .s5 {
-  @include transform3d(60px, -42deg);
-}
-
-.s2, .s3, .s4, .s5 {
-  @include translate3d(60px, 0, 0);
-}
-
-.view .s1 {
-  background-position: 0px 0px;
-}
-
-.view .s2 {
-  background-position: -60px 0px;
-}
-
-.view .s3 {
-  background-position: -120px 0px;
-}
-
-.view .s4 {
-  background-position: -180px 0px;
-}
-
-.view .s5 {
-  background-position: -240px 0px;
-}
-
-.view .overlay {
-  width: 60px;
-  height: 100%;
-  opacity: 0;
-  position: relative;
-  @include transition(opacity 150ms ease-in-out);
-}
-
-.view .s4 > .overlay {
-  @include gradient-horizontal($startColor: rgba(0, 0, 0, 0.3), $endColor: rgba(0, 0, 0, 0));
-}
-
-.view .s5 > .overlay {
-  @include gradient-horizontal($startColor: rgba(0, 0, 0, 0), $endColor: rgba(0, 0, 0, 0.3));
-}
-
-.view:hover .overlay {
-  opacity: 1;
-}
-
-.view .img {
-  position: absolute;
-  z-index: 0;
-  @include transition(left 0.3s ease-in-out);
-}
-
-// on mobile devices
-
-.touch .view {
-  overflow: hidden;
-}
-
-.touch .view-back span {
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-}
-
-.touch .view-back span.view-content {
-  display: none;
-}
-
-.touch .view-back a,
-.no-csstransforms3d .view:hover > .view-back a {
-  color: white;
-  border-color: white;
-}
-
-.no-csstransforms3d .view .overlay {
-  position: absolute;
-}
-
-.no-csstransforms3d .view-back a {
-  right: 8px;
 }
 
 // styles for audio
@@ -1137,6 +961,8 @@ footer:hover .share-actions li,
 @media (max-width: 480px) {
 
   // general styles
+
+  body, footer, .navbar, .page-wrapper { min-width: 280px; }
 
   .masthead,
   .page-wrapper   { padding: 0; }

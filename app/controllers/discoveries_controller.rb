@@ -1,5 +1,6 @@
 class DiscoveriesController < ApplicationController
   before_filter :admin_user, except: [:index, :show]
+  before_filter :increment_view_count, only: :show
   before_action :set_discovery, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -57,10 +58,17 @@ class DiscoveriesController < ApplicationController
   private
 
     def set_discovery
-      @discovery = Discovery.find(params[:id])
+      @discovery = Discovery.friendly.find(params[:id])
     end
 
     def discovery_params
       params.require(:discovery).permit(:title, :person, :content, :thumbnail)
+    end
+
+    def increment_view_count
+      unless signed_in?
+        @discovery = Discovery.friendly.find(params[:id])
+        @discovery.increment!(:views)
+      end
     end
 end

@@ -1,4 +1,4 @@
-<li id="<%= blog.id %>">
+<li id="blog-<%= blog.id %>">
 
   <div class="row-fluid">
     <div class="title">
@@ -31,7 +31,8 @@
         <ol class="share-actions">
           <% blog.tags.each do |tag| %>
             <li>
-              <i class="icon-tag"></i> <%= link_to "#{tag.name} (#{tag.blogs.published.count})", tag %>
+              <i class="icon-tag"></i>
+              <%= link_to "#{tag.name} (#{tag.blogs.published.count})", tag %>
             </li>
           <% end %>
         </ol>

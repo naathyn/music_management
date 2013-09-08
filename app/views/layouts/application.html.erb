@@ -18,20 +18,24 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <%= render 'shared/modal' %>
 
-    <%= render 'layouts/masthead' %>
-    <section id="main" class="page-wrapper" role="main">
+    <%= render 'shared/modal' %>
+    <header class="masthead">
+      <%= render 'layouts/masthead' %>
+    </header>
+
+    <div class="page-wrapper" id="main" role="main">
       <div class="page-fade">
         <%= render 'layouts/messages' %>
         <%= yield %>
       </div>
-    </section> <!-- page-wrapper -->
+    </div>
+
     <footer>
-      <div class="container">
-        <%= render 'layouts/footer' %>
-      </div>
+      <%= render 'layouts/footer' %>
     </footer>
-      <%= yield(:image) %>
+
+    <%= yield(:image) %>
+
   </body>
 </html>

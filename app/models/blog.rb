@@ -1,4 +1,7 @@
 class Blog < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :person, use: :slugged
+
   include TimestampHelper
   attr_writer :tag_names
 
@@ -8,8 +11,6 @@ class Blog < ActiveRecord::Base
   validates_presence_of :title, :content
 
   after_save :assign_tags
-
-  default_scope order: 'created_at DESC'
 
   def tag_names
     @tag_names || tags.map(&:name).sort.join(', ')

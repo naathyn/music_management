@@ -1,32 +1,40 @@
 <% provide(:title, @title) %>
 
-<% unless device_is_mobile? %>
 <% content_for(:head) do %>
-  <script>$(function(){$('#fold').hoverfold();});</script>
+  <% unless device_is_mobile? %>
+    <%= javascript_tag do -%>
+      $(function(){$('#index').hoverfold();});
+    <% end -%>
   <% end %>
 <% end %>
 
-<div class="grid">
-  <div class="container">
-    <div class="row-fluid" id="fold">
+<div id="<%= action_name %>">
+  <% @discoveries.each do |discovery| %>
 
-      <% @discoveries.each do |discovery| %>
+    <div class="view">
 
-        <div class="view">
+      <% if device_is_mobile? %>
+
+        <%= link_to discovery do %>
           <%= image_tag discovery.thumbnail %>
-          <div class="view-back" style="<%= image_for discovery %>">
+        <% end %>
 
-            <span class="view-title"><%= discovery.title %></span>
-            <span class="view-person"><%= discovery.person %></span>
-            <span class="view-content">
-              <%= truncate auto_link(discovery.content), length: 200 %>
-            </span>
-            <a href="<%= discovery_path(discovery) %>">
-              <i class="icon-arrow-right"></i>
-            </a>
-          </div>
-        </div>
+      <% else %>
+        <%= image_tag discovery.thumbnail %>
       <% end %>
-    </div>
-  </div>
+
+      <div class="view-back">
+        <span class="view-title"><%= discovery.title %></span>
+        <span class="view-person"><%= discovery.person %></span>
+        <span class="view-content">
+          <%= auto_link truncate discovery.content, length: 100, escape: false %>
+        </span>
+        <a href="<%= discovery_path(discovery) %>">
+          <i class="icon-arrow-right"></i>
+        </a>
+      </div> <!-- view-back -->
+
+    </div> <!-- view -->
+
+  <% end %>
 </div>
