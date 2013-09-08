@@ -32,7 +32,7 @@
           <% blog.tags.each do |tag| %>
             <li>
               <i class="icon-tag"></i>
-              <%= link_to "#{tag.name} (#{tag.blogs.published.count})", tag %>
+              <%= link_to "#{tag.name} (#{tag.blogs.count})", tag %>
             </li>
           <% end %>
         </ol>
