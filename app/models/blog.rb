@@ -1,6 +1,6 @@
 class Blog < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :person, use: :slugged
+  friendly_id :title, use: :slugged
 
   include TimestampHelper
   attr_writer :tag_names

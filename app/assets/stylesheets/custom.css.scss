@@ -291,7 +291,6 @@ footer .container li a {
   }
 }
 
-
 .church {
   top: 30%;
   left: 50%;
@@ -961,8 +960,6 @@ footer:hover .share-actions li,
 @media (max-width: 480px) {
 
   // general styles
-
-  body, footer, .navbar, .page-wrapper { min-width: 280px; }
 
   .masthead,
   .page-wrapper   { padding: 0; }
