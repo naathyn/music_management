@@ -1,20 +1,20 @@
 <% provide(:title, @title) %>
 
-<% content_for(:head) do %>
-  <% unless device_is_mobile? %>
+<% unless device_is_mobile? %>
+  <% content_for(:image) do %>
     <%= javascript_tag do -%>
-      $(function(){$('#index').hoverfold();});
+      $(function(){
+        $('#index').hoverfold();
+      });
     <% end -%>
   <% end %>
 <% end %>
 
-<div id="<%= action_name %>">
+<div id="index" class="container">
   <% @discoveries.each do |discovery| %>
 
     <div class="view">
-
       <% if device_is_mobile? %>
-
         <%= link_to discovery do %>
           <%= image_tag discovery.thumbnail %>
         <% end %>
@@ -27,13 +27,13 @@
         <span class="view-title"><%= discovery.title %></span>
         <span class="view-person"><%= discovery.person %></span>
         <span class="view-content">
-          <%= auto_link truncate discovery.content, length: 100, escape: false %>
+          <%= auto_link truncate discovery.content, length: 175, escape: false %>
         </span>
+
         <a href="<%= discovery_path(discovery) %>">
           <i class="icon-arrow-right"></i>
         </a>
       </div> <!-- view-back -->
-
     </div> <!-- view -->
 
   <% end %>
