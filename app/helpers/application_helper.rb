@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def user_agent
-    @user_agent ||= begin
+    @user_agent = begin
       request.env['HTTP_USER_AGENT'].downcase
     rescue
       ""
@@ -18,22 +18,19 @@ module ApplicationHelper
   end
 
   def device
-    @device ||= begin
+    @device = begin
       if user_agent.match(%r{(mac|ipad|iphone|ipod|chrome|msie)})
         'mp3'
       elsif user_agent.match(%r{(opera|mozilla)})
         'ogg'
       else
-        'unknown'
+        ""
       end
     end
   end
 
   def device_is_mobile?
-    if user_agent.match(%r{(mobile|ipad|iphone|android|tablet|phone)}).present?
-      return true
-    end
-    return false
+    user_agent.match(%r{(mobile|ipad|iphone|android|tablet|phone)}).present?
   end
 
   def device_can_play?(audio_type)

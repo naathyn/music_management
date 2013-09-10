@@ -958,8 +958,9 @@ footer:hover .share-actions li,
 }
 
 @media (max-width: 480px) {
-
-  // general styles
+.masthead #top.container #top-left #biolink {
+    display: block !important;
+  }
 
   .masthead,
   .page-wrapper   { padding: 0; }

@@ -1,16 +1,14 @@
 <% provide(:title, @title) %>
 
-<% unless device_is_mobile? %>
-  <% content_for(:image) do %>
+<% content_for(:head) do %>
+  <% unless device_is_mobile? %>
     <%= javascript_tag do -%>
-      $(function(){
-        $('#index').hoverfold();
-      });
+      $(function(){$('#index').hoverfold();});
     <% end -%>
   <% end %>
 <% end %>
 
-<div id="index" class="container">
+<div id="index" class="container-fluid">
   <% @discoveries.each do |discovery| %>
 
     <div class="view">

@@ -19,6 +19,4 @@ $(function() {
             hide: 250
         }
     });
-
-    Shadowbox.init();
 });
